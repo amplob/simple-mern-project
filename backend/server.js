@@ -75,4 +75,9 @@ app.post('/habits', (req, res, next) => {
     .json({ message: 'Created new habit', habit: createdHabit });
 });
 
+app.delete('/habits', (req, res, next) => {
+  const habitId = req.params.id;
+  DUMMY_HABITS =  DUMMY_HABITS.filter(h => h.id !== habitId);
+});
+
 app.listen(5000); // start Node + Express server on port 5000

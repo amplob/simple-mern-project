@@ -11,7 +11,7 @@ const HabitList = props => {
     content = (
       <ul className="habit-list">
         {props.items.map(p => (
-          <HabitItem key={p.id} name={p.title} />
+          <HabitItem key={p.id} name={p.title} onDeleteHabit={props.onDeleteHabit}/>
         ))}
       </ul>
     );
