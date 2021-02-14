@@ -99,43 +99,6 @@ function App() {
     }
   };
 
-
-  // const addProductHandler = async (productName, productPrice) => {
-  //   try {
-  //     const newProduct = {
-  //       title: productName,
-  //       price: +productPrice // "+" to convert string to number
-  //     };
-  //     let hasError = false;
-  //     const response = await fetch('http://localhost:5000/product', {
-  //       method: 'POST',
-  //       body: JSON.stringify(newProduct),
-  //       headers: {
-  //         'Content-Type': 'application/json'
-  //       }
-  //     });
-
-  //     if (!response.ok) {
-  //       hasError = true;
-  //     }
-
-  //     const responseData = await response.json();
-
-  //     if (hasError) {
-  //       throw new Error(responseData.message);
-  //     }
-
-  //     setLoadedProducts(prevProducts => {
-  //       return prevProducts.concat({
-  //         ...newProduct,
-  //         id: responseData.product.id
-  //       });
-  //     });
-  //   } catch (error) {
-  //     alert(error.message || 'Something went wrong!');
-  //   }
-  // };
-
   return (
     <React.Fragment>
       <Header />
