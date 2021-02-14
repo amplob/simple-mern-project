@@ -25,7 +25,12 @@ function App() {
 
 
   const deleteHabitHandler = async (HabitName) => {
- 
+    try {
+      //delete
+    }
+    catch (error) {
+      alert(error.message || 'Something went wrong deleting!');
+    }
   };
 
 
