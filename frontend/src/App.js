@@ -25,38 +25,7 @@ function App() {
 
 
   const deleteHabitHandler = async (HabitName) => {
-    try {
-      const newHabit = {
-        title: HabitName,
-      };
-      let hasError = false;
-      const response = await fetch('http://localhost:5000/habits', {
-        method: 'POST',
-        body: JSON.stringify(newHabit),
-        headers: {
-          'Content-Type': 'application/json'
-        }
-      });
-
-      if (!response.ok) {
-        hasError = true;
-      }
-
-      const responseData = await response.json();
-
-      if (hasError) {
-        throw new Error(responseData.message);
-      }
-
-      setLoadedHabits(prevHabits => {
-        return prevHabits.concat({
-          ...newHabit,
-          id: responseData.habit.id
-        });
-      });
-    } catch (error) {
-      alert(error.message || 'Something went wrong!');
-    }
+ 
   };
 
 
