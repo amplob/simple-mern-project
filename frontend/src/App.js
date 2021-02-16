@@ -27,6 +27,24 @@ function App() {
   const deleteHabitHandler = async (HabitName) => {
     try {
       //delete
+      let hasError = false;
+      const response = await fetch('http://localhost:5000/habits', {
+        method: 'DELETE',
+        body: JSON.stringify(HabitName),
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      });
+
+      if (!response.ok) {
+        hasError = true;
+      }
+      
+      const responseData = await response.json();
+
+      if (hasError) {
+        throw new Error(responseData.message);
+      }
     }
     catch (error) {
       alert(error.message || 'Something went wrong deleting!');
